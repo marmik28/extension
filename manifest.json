@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Privacy Page Analyzer",
+  "version": "1.0",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["*://*/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["contentScript.js"]
+      }
+  ],
+  "action": {
+      "default_popup": "popup.html"
+  }
+}
